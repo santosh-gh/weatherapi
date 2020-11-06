@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'terraformdockerhubconnection'
-        repository: 'e880613/weatherapi:v1'
+        repository: 'e880613/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile' 
         tags: |
