@@ -8,9 +8,13 @@ terraform {
         subscription_id         = "fdc7ca00-0892-48b6-a411-cf66b3774c76"
         resource_group_name     = "rg_storage"
         storage_account_name    = "terraformstorageac"
-        container_name          = "terraformstatefile"
+        container_name          = "homecontainer"
         key                     = "root.terraform.tfstate"
     }    
+}
+variable "imagebuild" {
+  type        = string
+  description = "Latest Image Build"
 }
 
 resource "azurerm_resource_group" "tf_test" {
@@ -28,7 +32,7 @@ resource "azurerm_container_group" "tfcg_test" {
 
     container {
         name    = "weatherapi"
-        image   = "e880613/weatherapi:v1"
+        image   = "e880613/weatherapi:${var.imagebuild}"
         cpu     = "1"
         memory  = "1"
 
