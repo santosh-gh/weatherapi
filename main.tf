@@ -5,11 +5,11 @@ provider "azurerm"{
 
 terraform {
     backend "azurerm"{
+        subscription_id         = "fdc7ca00-0892-48b6-a411-cf66b3774c76"
         resource_group_name     = "rg_storage"
         storage_account_name    = "terraformstorageac"
         container_name          = "terraformstatefile"
-        key                     = "terraform12345"
-
+        key                     = "terraform.tfstate"
     }    
 }
 
