@@ -39,7 +39,7 @@ stages:
       variables:
       -group: TerraformServicePrincipalVariables
     steps:
-    - script:
+    - script: |
         set -e
 
         terraform init -input=false
