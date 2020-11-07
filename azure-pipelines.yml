@@ -1,4 +1,4 @@
-git # Docker
+#git # Docker
 # Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
@@ -36,8 +36,8 @@ stages:
     displayName: 'Provisioning Container Instance'
     pool: 
       vmImage: 'ubuntu-latest'
-    variables:
-    -group: TerraformServicePrincipalVariables
+      variables:
+      -group: TerraformServicePrincipalVariables
     steps:
     - script:
         set -e
