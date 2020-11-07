@@ -3,6 +3,16 @@ provider "azurerm"{
     features{}
 }
 
+terraform {
+    backend "azurerm"{
+        resource_group_name     = "rg_storage"
+        storage_account_name    = "terraformstorageac"
+        container_name          = "terraformstatefile"
+        key                     = "terraform.tfstate"
+
+    }    
+}
+
 resource "azurerm_resource_group" "tf_test" {
     name        = "tfmainrg"
     location    = "South India"
